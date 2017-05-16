@@ -2,10 +2,39 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include ../partials/header.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <h1 style="font-family: Barrio"><%= title %></h1>
+      <p>Engage your friends, shorten your URLs!</p>
+    </div>
+    <div class="container">
+      <form class="" action="" method="post">
+        <input type="url" name="url" placeholder="Insert URL here" class="validate">
+        <button type="submit">Shorten URL!</button>
+      </form>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>URL</th>
+            <th>Shortened URL</th>
+            <th>Count Click</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach(url => { %>
+          <tr>
+            <td><%= url.Url %></td>
+            <td><%= url.ShortUrl %></td>
+            <td><%= url.click_count %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
