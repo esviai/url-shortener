@@ -7,34 +7,21 @@
   </head>
   <body>
     <div class="container">
-      <h1 style="font-family: Barrio"><%= title %></h1>
-      <p>Engage your friends, shorten your URLs!</p>
-    </div>
-    <div class="container">
-      <form class="" action="" method="post">
-        <input type="url" name="url" placeholder="Insert URL here" class="validate">
-        <button type="submit">Shorten URL!</button>
-      </form>
-    </div>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>URL</th>
-            <th>Shortened URL</th>
-            <th>Count Click</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% urls.forEach(url => { %>
-          <tr>
-            <td><%= url.Url %></td>
-            <td><%= url.ShortUrl %></td>
-            <td><%= url.click_count %></td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    </div>
+      <% include ../partials/title.ejs %>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <p style="font-family:Raleway" class="center"> Don't ruin your engagement rate by sharing a very long and impossible to remember link.<br/><br/></p>
+          <p style="font-family:Raleway" class="center"><b>Shorten your URL with our app NOW!</b></p>
+        </div>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row">
+        <div class="col s12 center">
+          <a class="waves-effect waves-light btn-large orange" href="/create">GENERATE NOW!</a>
+        </div>
+      </div>
   </body>
 </html>
